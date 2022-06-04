@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from base64 import b64decode
 
 
-def descargar_las(usuario, contrasena, nombre_archivo):
+def descargar_las(usuario, contrasena):
     '''
     Esta funcion descarga un PDF con el resultado, Se limita a 1 página.
     '''
@@ -31,7 +31,7 @@ def descargar_las(usuario, contrasena, nombre_archivo):
                     'text':
                         'descargando...'
                    })
-    with open(f'{nombre_archivo}.pdf', 'wb') as writer:
+    with open(f'{filename}.pdf', 'wb') as writer:
         writer.write(file_pdf)
        
     return
